@@ -1,14 +1,22 @@
-¿ÎÌÃÁ·Ï°£º
+è¯¾å ‚ç»ƒä¹ ï¼š
 
-1.¡®hello,world¡¯.replease('l','*')
+1.â€˜hello,worldâ€™.replace('l','*')
 
-2.('Good{}'.format('!')) * 3
+2.('Good{}'.format('!')).lower() * 3
+  (('Good'+'!')*3).lower()
 
 3.'FhIqoWe92QbvC'.swapcase()
 
-4.str = 'FhIqoWe92QbvC'
-  num ''.join([x for x in str if x.isdigit()])
-  print(num)
+4.str = "Fh1qoWe92QbvC"
+  list=[]
+if str.isdigit():
+    print(str)
+else:
+    for i in str:
+        if i>="0" and i<="9":
+            list.append(i)
+    print(list)
+
 
 5.lst = [2, 0, 3, 6, 9]
   sorted(lst)
@@ -33,17 +41,17 @@ def strInNumber(str):
     blank=0  
     other=0  
     for i in range(0,len(str)):
-        if ord(str[i])>=0 and ord(str[i])<=9:
-            number+=1
-        elif (ord(str[i])>'a' and ord(str[i])<='z') or (ord(str[i])>='A' and ord(str[i])<='Z'):#ÅĞ¶Ï×Ö·ûÊÇ·ñÎª×ÖÄ¸
-            letter+=1
-        elif ord(str[i])=='':
-            blank+=1
-        else:
-            other+=1
-    print("¸Ã×Ö·û´®ÖĞÊı×ÖÓĞ%d¸ö,×ÖÄ¸%d¸ö,¿Õ¸ñ%d¸ö,ÆäËûµÄ%d¸ö." % (number, letter, blank, other))
-
-strInNumber(string)
+         if i.isdigit():
+             num+=1
+         if i.isalpha():
+             letter+=1
+         if i.isspace():
+             space+=1
+         else:
+             other+=1
+     print (num,space,letter,other)
+  
+strInNumber(string1)
 
 9.string2 = 'a b c'
   def space(str):
@@ -56,15 +64,15 @@ strInNumber(string)
 import random
 def guess_number():
     true_num = random.randint(1, 100)
-    user_num = int(input("ÇëÊäÈëÒ»¸öÕûÊı:"))
+    user_num = int(input("è¯·è¾“å…¥ä¸€ä¸ªæ•´æ•°:"))
     count = 1
     while true_num != user_num:
         if true_num > user_num:
-            print("Ì«Ğ¡ÁË£¬ÇëÖØĞÂÊäÈë£¡")
+            print("å¤ªå°äº†ï¼Œè¯·é‡æ–°è¾“å…¥ï¼")
         elif true_num < user_num:
-            print("Ì«´óÁË£¬ÇëÖØĞÂÊäÈë£¡")
+            print("å¤ªå¤§äº†ï¼Œè¯·é‡æ–°è¾“å…¥ï¼")
         count += 1
-        user_num = int(input("ÇëÊäÈëÒ»¸öÕûÊı£º"))
-    print("¹§Ï²Äú£¬Äú²Â¶ÔÁË£¡ÄúÒ»¹²²ÂÁË%d´Î" % count)
+        user_num = int(input("è¯·è¾“å…¥ä¸€ä¸ªæ•´æ•°ï¼š"))
+    print("æ­å–œä½ ï¼Œä½ çŒœå¯¹äº†ï¼ä½ ä¸€å…±çŒœäº†%dæ¬¡" % count)
 
 guess_number()
