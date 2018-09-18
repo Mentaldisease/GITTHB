@@ -2,23 +2,38 @@
 for m in range(1, 10):
     for n in range(1, m+1):
         print("%d*%d=%d\t"%(n,m,n*m), end="")
- 
     print("")
  
 2.
-def sumStartToEnd():
-    for i in range(0,101):
-	print(i)
-        if i%3 == 0:
-	    print('Fizz')
-	elif i%5 == 0:
-	    print('Buzz')
-	elif i%3 == 0 and i%5 == 0:
-	    print('FizzBuzz')
+while i <= 100:
+    if i%3 == 0:
+        print('Fizz')
+    if i%5 == 0:
+        print('Buzz')
+    if i%3 == 0 and i%5 == 0:
+        print('FizzBuzz')
+    i += 1
 
 3.
-i = 0
-j = 1
-def numberlist():
-    while i < 10000:
-        print i, i, j=j, i+j
+def Fib(fib):
+    if fib == 0:
+        return 0
+    elif fib == 1:
+        return 1
+    else:
+        return (Fib(fib-1)+Fib(fib-2))
+ 
+a = int(input())
+b = 0
+sum = 0
+ave = 0
+ 
+while Fib(b)<=a :
+    print(Fib(b),end=", ")
+    sum += Fib(b)
+    b += 1
+ 
+ave = sum / b
+ 
+print(sum,end=', ')
+print(int(ave))
